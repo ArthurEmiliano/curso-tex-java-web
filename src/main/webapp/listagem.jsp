@@ -4,6 +4,19 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+	<b>Tamanho da lista: ${motos.size()})</b>
+	<br /><br />
+	Marca: ${moto.marca}
+	<br /><br />
+	Modelo: ${moto.modelo}
+	<br /><br />
+	Ano: ${moto.ano}
+	<br /><br />
+	
+	
+
+
 	<% List<Moto> motos = (List<Moto>)request.getAttribute("motos");%>
 	
 	<table>

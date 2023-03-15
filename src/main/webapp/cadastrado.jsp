@@ -3,6 +3,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-	Moto <%=request.getAttribute("nomeDaMoto") %> cadastrada com sucesso!
+	Moto ${nomeDaMoto} cadastrada com sucesso!
 </body>
-</html>
+</html>	

@@ -25,6 +25,9 @@ public class ListaMotos extends HttpServlet{
 		MotoDao dao = new MotoDao();
 		List<Moto> motos = dao.lista();
 		
+		Moto moto = dao.buscaPor(11);
+		
+		req.setAttribute("moto", moto);
 		req.setAttribute("motos", motos);
 		
 		req.getRequestDispatcher("listagem.jsp").forward(req, resp);
