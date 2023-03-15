@@ -4,10 +4,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<%
-		MotoDao dao = new MotoDao();
-		List<Moto> motos = dao.lista();
-	%>
+	<% List<Moto> motos = (List<Moto>)request.getAttribute("motos");%>
 	
 	<table>
 		<tr>
