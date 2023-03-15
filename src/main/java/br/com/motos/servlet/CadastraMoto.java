@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import br.com.motos.dao.MotoDao;
 import br.com.motos.modelo.Moto;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,16 +26,9 @@ public class CadastraMoto extends HttpServlet{
 		MotoDao motoDao = new MotoDao();
 		motoDao.cadastra(moto);
 		
-		PrintWriter saida = resp.getWriter();
+		req.setAttribute("nomeDaMoto", moto.getModelo());
 		
-		saida.println("<html>");
-		saida.println("<body>");
-		saida.println("Moto " + modelo + " cadastrada com sucesso!");
-		
-		saida.println("<br /><br />");
-		saida.println("<a href='/motos/lista'> voltar</a>");
-		
-		saida.println("</body>");
-		saida.println("</html>");
+		RequestDispatcher rd = req.getRequestDispatcher("cadastrado.jsp");
+		rd.forward(req, resp);
 	}
 }
