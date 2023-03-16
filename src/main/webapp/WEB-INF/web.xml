@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>motos</display-name>
+  
   <welcome-file-list>
     <welcome-file>home.html</welcome-file>
   </welcome-file-list>
+  
+  <filter>
+	<filter-name>FiltroA</filter-name>
+  	<filter-class>filtro.FiltroA</filter-class>
+  </filter>
+  
+  <filter>
+	<filter-name>FiltroB</filter-name>
+	<filter-class>filtro.FiltroB</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>FiltroA</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>FiltroB</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
