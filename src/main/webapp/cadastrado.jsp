@@ -5,12 +5,13 @@
 <html>
 <body>
 
-	<c:if test="${empty nomeDaMoto}">
+<%-- 	<c:if test="${empty nomeDaMoto}">
 		Nenhuma moto foi encontrada
 	</c:if>
 	<c:if test="${not empty nomeDaMoto} }">
 		Moto ${nomeDaMoto} cadastrada com sucesso!
-	</c:if>
+	</c:if> --%>
+	Moto cadastrada com sucesso!
 	
 </body>
 </html>	

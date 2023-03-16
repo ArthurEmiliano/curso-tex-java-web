@@ -26,9 +26,13 @@ public class CadastraMoto extends HttpServlet{
 		MotoDao motoDao = new MotoDao();
 		motoDao.cadastra(moto);
 		
-		req.setAttribute("nomeDaMoto", moto.getModelo());
+		/*
+		 * req.setAttribute("nomeDaMoto", moto.getModelo());
+		 * 
+		 * RequestDispatcher rd = req.getRequestDispatcher("cadastrado.jsp");
+		 * rd.forward(req, resp);
+		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("cadastrado.jsp");
-		rd.forward(req, resp);
+		resp.sendRedirect("cadastrado.jsp");
 	}
 }
