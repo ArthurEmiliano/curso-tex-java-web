@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.motos.dao.MotoDao;
 import br.com.motos.modelo.Moto;
+import br.com.motos.modelo.Usuario;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,6 +30,9 @@ public class ListaMotos extends HttpServlet{
 		
 		req.setAttribute("moto", moto);
 		req.setAttribute("motos", motos);
+		
+		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
+		System.out.println("Nome do usuário logado: " + usuario.getNome());
 		
 		req.getRequestDispatcher("listagem.jsp").forward(req, resp);
 		

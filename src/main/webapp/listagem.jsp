@@ -8,6 +8,10 @@
 <html>
 <body>
 	
+	<br />
+	Usuário logado: ${usuario.nome}
+	<br />
+	
 	<table>
 		<tr>
 			<td>id</td>

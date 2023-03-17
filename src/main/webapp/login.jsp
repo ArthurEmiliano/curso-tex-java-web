@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html>
 <body>
+	
+	<br />
+	${mensagem}
+	<br />
+
 	<form action="/motos/login" method="post">
 		<b>Login:</b><input type ="text" name="login"><br />
 		<b>Senha:</b><input type ="text" name="senha"><br />

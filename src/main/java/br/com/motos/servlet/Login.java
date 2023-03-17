@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class Login extends HttpServlet{
@@ -22,9 +23,11 @@ public class Login extends HttpServlet{
 		Usuario usuario = dao.verifica(login, senha);
 		
 		if(usuario != null) {
-			System.out.println("Usuario cadastrado");
+			HttpSession session = req.getSession();
+			session.setAttribute("usuario", usuario);
 		} else {
-			System.out.println("Usuario não existe");
+			req.setAttribute("mensagem", "Usuário não cadastrado");
+			resp.sendRedirect("login.jsp");
 		}
 		
 	}
